@@ -1,6 +1,9 @@
 torch
 torchvision
+transformers
+Pillow
+scikit-learn
+safetensors
 timm
 opencv-python
-scikit-learn
-Pillow
+pandas

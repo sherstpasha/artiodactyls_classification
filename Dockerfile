@@ -1,20 +1,31 @@
-# Базовый образ с Python и поддержкой CUDA
-FROM nvidia/cuda:11.4.2-cudnn8-runtime-ubuntu20.04
+# Выбор базового образа с предустановленным Python
+FROM python:3.9-slim
 
-# Установка зависимостей
+# Установка неинтерактивного режима для APT (автоматический выбор ответов по умолчанию)
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Настройка временной зоны (пример для часовой зоны Москва)
+ENV TZ=Europe/Moscow
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# Обновление списка пакетов и установка необходимых системных зависимостей
 RUN apt-get update && apt-get install -y \
-    python3 \
-    python3-pip \
-    && apt-get clean \
+    git \
+    python3-opencv \
+    # Удаление списков пакетов после установки для уменьшения размера образа
     && rm -rf /var/lib/apt/lists/*
 
-# Установка необходимых библиотек
-COPY requirements.txt /requirements.txt
-RUN pip3 install --no-cache-dir -r /requirements.txt
+# Копирование файла требований зависимостей Python в контейнер
+COPY requirements.txt /workspace/requirements.txt
 
-# Копирование исходного кода в контейнер
-COPY . /app
-WORKDIR /app
+# Установка зависимостей Python из файла требований
+RUN pip install --no-cache-dir -r /workspace/requirements.txt
+
+# Копирование оставшегося исходного кода проекта в контейнер
+COPY . /workspace
+
+# Установка рабочей директории
+WORKDIR /workspace
 
 # Открытие консоли
 CMD ["bash"]
