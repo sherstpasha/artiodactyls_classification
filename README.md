@@ -62,4 +62,5 @@ python ResNet_pred.py mounted_folder/valid/Кабарга mounted_folder/sorted_
 ### Ссылки на обученные модели
 
 - [Модель ResNet](https://drive.google.com/file/d/1TTkXIEqNbkzgpsFuLDUzvikLnzqJFay_/view?usp=sharing)
+- [Модель ResNet](https://drive.google.com/file/d/1xW7QU0E-qn7ZiDFAFLB9lEJP_9nl0gcR/view?usp=sharing)
 - [Модель YOLOv5s](https://drive.google.com/file/d/1A5xLXKkLZ49W_xxjS8b4wPm4SPa6yqa_/view?usp=sharing)
