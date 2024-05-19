@@ -39,6 +39,8 @@ python ResNet_eval.py mounted_folder/valid mounted_folder/sorted_predictions --m
 python ResNet_train.py C:/Users/user/Desktop/data/train C:/Users/user/ack/artiodactyls_classification/best_model_ResNet_20.pth 10 --device cpu
 ```
 
+python ResNet_train_2.py C:/Users/user/Desktop/data/train/Кабала C:/Users/user/Desktop/data/train/Косуля C:/Users/user/Desktop/data/train/Олень C:/Users/user/Downloads/best_model_ResNet_20.pth 10 --device cuda
+
 **Пример:**
 
 ```sh
