@@ -21,7 +21,7 @@ docker run --gpus all -it -v /путь/к/вашей/папке:/workspace/mount
 docker run -it -v C:/valid:/workspace/mounted_folder your_image_name
 ```
 
-### 3. Запуск валидации для ResNet
+### 3. Запуск валидации
 
 ```sh
 python ResNet_eval.py C:/Users/user/Desktop/data/valid C:/Users/user/Desktop/sorted_predictions --model_path best_model_ResNet_20.pth --device cuda
@@ -33,7 +33,7 @@ python ResNet_eval.py C:/Users/user/Desktop/data/valid C:/Users/user/Desktop/sor
 python ResNet_eval.py mounted_folder/valid mounted_folder/sorted_predictions --model_path mounted_folder/best_model_ResNet_20.pth --device cuda
 ```
 
-### 4. Запуск обучения для ResNet
+### 4. Запуск обучения
 
 ```sh
 python ResNet_train.py C:/Users/user/Desktop/data/train C:/Users/user/ack/artiodactyls_classification/best_model_ResNet_20.pth 10 --device cpu
@@ -47,7 +47,7 @@ python ResNet_train_2.py C:/Users/user/Desktop/data/train/Кабала C:/Users/
 python ResNet_train.py mounted_folder/valid mounted_folder/best_model_ResNet_20.pth 10 --device cpu
 ```
 
-### 5. Запуск предсказания для ResNet
+### 5. Запуск предсказания
 
 ```sh
 python ResNet_pred.py C:/Users/user/Desktop/test_valid C:/Users/user/Desktop/sorted_predictions --model_path best_model_ResNet_20.pth --device cpu
